@@ -2,28 +2,30 @@
 
 <h2>Burgers yet to be consumed</h2>
 
-<ul>
+<ol>
   {{#each burgers}}
     {{#unless devoured}}
-      <li>{{name}}</li>
+      <li>{{burger_name}}
+         <button data-id="{{id}}" data-devoured="true" class="devour">Devour It!</button>
+      </li>
     {{/unless}}
   {{/each}}
-</ul>
+</ol>
 
 <h2>Burgers that have been eaten</h2>
 
-<ul>
+<ol>
   {{#each burgers}}
     {{#if devoured}}
-      <li>{{name}}</li>
+      <li>{{burger_name}}</li>
     {{/if}}
   {{/each}}
-</ul>
+</ol>
 
 <form class="create-form">
 
   <div class="form-group">
-    <input type="text" name="burger">
+    <input type="text" id="burger" name="name">
   </div>
 
   <button type="submit">Submit</button>
