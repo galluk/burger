@@ -1,35 +1,57 @@
-<h1>Burgers!</h1>
-
-<h2>Burgers yet to be consumed</h2>
-
-<ol>
-  {{#each burgers}}
-    {{#unless devoured}}
-      <li>{{burger_name}}
-         <button data-id="{{id}}" data-devoured="true" class="devour">Devour It!</button>
-      </li>
-    {{/unless}}
-  {{/each}}
-</ol>
-
-<h2>Burgers that have been eaten</h2>
-
-<ol>
-  {{#each burgers}}
-    {{#if devoured}}
-      <li>{{burger_name}}</li>
-    {{/if}}
-  {{/each}}
-</ol>
-
-<form class="create-form">
-
-  <div class="form-group">
-    <input type="text" id="burger" name="name">
+<div class="container">
+  <div class="row">
+    {{!-- empty col to the left --}}
+    <div class="col-sm-2"></div>
+    {{!-- the list of yet to be devoured items --}}
+    <div class="col-sm-4">
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            <li>{{id}}.  {{burger_name}}
+              {{!-- <button data-id="{{id}}" data-devoured="true" class="devour">Devour It!</button> --}}
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    {{!-- col for the buttons --}}
+    <div class="col-sm-2">
+      <ul class="button-list">
+        {{#each burgers}}
+          {{#unless devoured}}
+            <li>
+              <button data-id="{{id}}" data-devoured="true" class="devour">Devour It!</button>
+            </li>
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    {{!-- col for the list of devoured items --}}
+    <div class="col-sm-4">
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            <li>{{id}}.  {{burger_name}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+    {{!-- empty col to the right --}}
+    <div class="col-sm-2"></div>
   </div>
+</div>
 
-  <button type="submit">Submit</button>
-
-  <h3>Enter a burger you want to eat and click the "Submit" button.</h3>
-  
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <form class="create-form">
+        <div class="form-group">
+          <textarea class="form-input" id="burger" name="name"></textarea>
+          <br>
+          <button type="submit">Submit</button>
+        </div>
+        <h5>Enter a burger you want to eat and click the "Submit" button.</h5>
+      </form>
+    </div>
+  </div>
+</div>
