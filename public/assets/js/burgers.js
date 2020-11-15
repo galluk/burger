@@ -44,4 +44,22 @@ $(function () {
         );
     });
 
+    // handle the reset
+    $(".reset-burgers").on("click", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // Send as a PUT request, with resetId of -1 meaning all. Can be changed later to send selected id.
+        $.ajax("/api/burgers-reset", {
+            type: "PUT",
+            data: { resetId: -1 }
+        }).then(
+            function () {
+                console.log(`reset burgers`);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
 });

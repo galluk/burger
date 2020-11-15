@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     {{!-- empty col to the left --}}
-    <div class="col-sm-2"></div>
+    <div class="col-sm-1"></div>
     {{!-- the list of yet to be devoured items --}}
-    <div class="col-sm-4">
+    <div class="col-sm-4 list-div">
       <ul>
         {{#each burgers}}
           {{#unless devoured}}
-            <li>{{id}}.  {{burger_name}}
+            <li><input class="input-list" type="text" value="{{id}}.  {{burger_name}}" readonly>
               {{!-- <button data-id="{{id}}" data-devoured="true" class="devour">Devour It!</button> --}}
             </li>
           {{/unless}}
@@ -20,24 +20,25 @@
         {{#each burgers}}
           {{#unless devoured}}
             <li>
-              <button data-id="{{id}}" data-devoured="true" class="devour">Devour It!</button>
+              <button class="btn devour" data-id="{{id}}" data-devoured="true">Devour It!</button>
             </li>
           {{/unless}}
         {{/each}}
       </ul>
     </div>
     {{!-- col for the list of devoured items --}}
-    <div class="col-sm-4">
+    <div class="col-sm-4 list-div">
       <ul>
         {{#each burgers}}
           {{#if devoured}}
-            <li>{{id}}.  {{burger_name}}</li>
+            <li><input class="input-list list-devoured" type="text" value="{{id}}.  {{burger_name}}" readonly>
+            {{!-- <li>{{id}}.  {{burger_name}}</li> --}}
           {{/if}}
         {{/each}}
       </ul>
     </div>
     {{!-- empty col to the right --}}
-    <div class="col-sm-2"></div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
 
@@ -48,10 +49,11 @@
         <div class="form-group">
           <textarea class="form-input" id="burger" name="name"></textarea>
           <br>
-          <button type="submit">Submit</button>
+          <button  class="btn btn-primary" type="submit">Submit</button>
         </div>
         <h5>Enter a burger you want to eat and click the "Submit" button.</h5>
       </form>
+      <p>The burger list can be <a class="reset-burgers" href="">reset here</a>.</p>
     </div>
   </div>
 </div>

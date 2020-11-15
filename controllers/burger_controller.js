@@ -42,5 +42,17 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+// do the reset
+router.put("/api/burgers-reset", function (req, res) {
+    // at this stage only resetting all
+    burger.resetAll(function (result) {
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
 // Export routes for server.js to use.
 module.exports = router;

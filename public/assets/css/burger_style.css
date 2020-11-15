@@ -1,11 +1,39 @@
 /** @format */
+:root {
+	--site-colour: #f1b444;
+}
+
+form {
+	display: inline-block;
+}
+
 body {
-	background-color: #f1b444;
+	background-color: var(--site-colour);
 	text-align: center;
 }
 
+h1 {
+	color: rgb(207, 9, 9);
+	font-family: "Lucida Sans", Verdana, sans-serif;
+	text-align: center;
+}
+
+ul {
+	background: var(--site-colour) 4;
+	list-style-position: inside;
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	padding: 5px;
+	margin: 5px;
+	line-height: 2.5em;
+	border-color: var(--site-colour);
+}
+
 .jumbotron {
-	background-color: #f1b444;
+	background-color: var(--site-colour);
 	padding: 0px;
 }
 
@@ -21,50 +49,56 @@ body {
 	padding-bottom: 15px;
 }
 
-h1 {
-	color: rgb(207, 9, 9);
-	font-family: "Lucida Sans", Verdana, sans-serif;
-	text-align: center;
-}
-
-ul {
-	background: #faebd7;
-	list-style-position: inside;
-	list-style-type: none;
-	padding: 0;
-	/* padding: 0; */
-}
-
-li {
-	padding: 5px;
-	margin: 5px;
-	border: 5px;
-	line-height: 2.5em;
-	border-color: #f1b444;
+/* list settings */
+.list-div {
+	width: 100%;
 }
 
 .button-list {
-	background-color: #f1b444;
-	justify-content: left;
-	padding-left: 0;
-	display: flex;
-	align-items: middle;
+	background: var(--site-colour);
+	justify-content: center;
 }
 
 .button-list li {
+	padding: 7px 5px 5px 5px;
+	line-height: 2em;
+	height: 52px;
+}
+
+.input-list {
+	outline: none !important;
+	background: #faebd7;
+	border: #faebd7;
+	width: 100%;
+	text-align: center;
+}
+
+.list-devoured {
+	color: darkgrey;
+}
+
+/* the devour button */
+.devour {
+	background-color: rgb(255, 125, 0);
+	color: whitesmoke;
+	height: 36px;
+	vertical-align: middle;
+	width: 100%;
+	/* border: none; */
+	cursor: pointer;
+	border-radius: 4px;
 	padding: 0px;
-	margin: 0px;
-	line-height: 1.5em;
+}
+
+.devour:hover {
+	background-color: orangered;
 }
 
 .label {
 	font-weight: bold;
 }
 
-form {
-	display: inline-block;
-}
-
+/* form controls */
 .form-input {
 	width: 300px;
 	margin-bottom: 10px;

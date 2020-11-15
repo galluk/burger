@@ -19,6 +19,11 @@ const burger = {
             cb(res);
         });
     },
+    resetAll: function (cb) {
+        orm.resetAll("burgers", function (res) {
+            cb(res);
+        });
+    },
 };
 
 // Export the database functions for the controller
