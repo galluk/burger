@@ -32,6 +32,12 @@ A burger logger using MySQL, Node, Express, Handlebars and an ORM.
 
 GNU General Public License v3.0
 
+### Link to the App
+
+<a href="https://tranquil-bastion-70586.herokuapp.com/">Eat It!</a>
+
+<hr>
+
 ### Link to the github Repo
 
 <a href="https://github.com/galluk/burger">Eat-da-Burger</a>
